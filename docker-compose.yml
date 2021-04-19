@@ -1,0 +1,32 @@
+services:
+    php:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 80:80
+        volumes:
+            - .:/var/www/html/
+
+    db:
+        image: mysql:5.7
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: 'testrootpass'
+            MYSQL_USER: 'testuser'
+            MYSQL_PASSWORD: 'testpass'
+            MYSQL_DATABASE: 'testdb'
+        volumes:
+            - mysqldata:/var/lib/mysql
+
+    phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 3333:80
+        environment:
+            - PMA_ARBITRARY=1
+            
+volumes:
+    mysqldata:
