@@ -1,5 +1,7 @@
 <?php
 
+// phpinfo();
+
 echo "Hello from the docker container";
 
 $serverName = "db";
