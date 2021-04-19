@@ -4,9 +4,9 @@
 
 echo "Hello from the docker container";
 
-$serverName = "db";
-$dbUsername = "testuser";
-$dbUserPassword = "testpass";
+$serverName = "mysql";
+$dbUsername = "root";
+$dbUserPassword = "root";
 $dbName = "testdb";
 
 try {
