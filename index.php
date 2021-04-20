@@ -1,9 +1,8 @@
 <?php
-require_once 'vendor/autoload.php';
 
 // phpinfo();
 
-echo "Hello from the docker container";
+echo "Hello from the docker container<br><br>";
 
 $serverName = "mysql";
 $dbUsername = "root";
@@ -19,7 +18,7 @@ try {
 	exit("Database Connection failed"); // . $e->getMessage());
 }
 
-echo '<br><br>MySQL Version: ' . run('SHOW VARIABLES like "version"')->fetch()['Value'];
+echo 'MySQL Version: ' . run('SHOW VARIABLES like "version"')->fetch()['Value'];
 
 function run($query, $bind = [])
 {
