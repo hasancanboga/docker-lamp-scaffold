@@ -19,6 +19,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: 'root'
             MYSQL_DATABASE: 'testdb'
+            MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
         volumes:
             - mysqldata:/var/lib/mysql
 
